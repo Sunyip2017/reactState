@@ -7,13 +7,17 @@ const webpackBaseConfig = {
         filename:'[name].[fullhase:4].js'
     },
     resolve: {
-        extensions: ['.js','.jsx']
+        extensions: ['.js','.jsx','.tsx']
     },
     module: {
         rules: [
             {
                 test:/\.js[x]/,
                 use:'babel-loader'
+            },
+            {
+                test:/\.ts[x]/,
+                use:'ts-loader'
             },
             {
                 test:/\.(sc|c)ss/,
